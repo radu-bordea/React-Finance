@@ -5,4 +5,9 @@
 - npm i -D @types/node
 
 
-
+# backend
+- mkdir server
+- npm init -y
+- npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency
+- npm i -D nodemon
+- add "type": "module" in package.json // to use imports
