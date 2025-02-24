@@ -5,6 +5,9 @@ import cors from "cors"; // Middleware to handle Cross-Origin Resource Sharing (
 import dotenv from "dotenv"; // Loads environment variables from a .env file
 import helmet from "helmet"; // Security middleware to set HTTP headers
 import morgan from "morgan"; // HTTP request logger middleware
+import kpiRoutes from "./routes/kpi.js";
+import KPI from "./models/KPI.js";
+import { kpis } from "./data/data.js";
 
 /* CONFIGURATIONS */
 dotenv.config(); // Load environment variables from .env file
@@ -24,13 +27,22 @@ app.use(morgan("common"));
 app.use(cors());
 // Enables CORS to allow requests from different origins (useful for frontend-backend communication)
 
+{
+  /* ROUTES */
+}
+app.use("/kpi", kpiRoutes);
+
 /* MONGOOSE SETUP*/
 
 const PORT = process.env.PORT || 9000;
 mongoose
-  .connect(process.env.MONGO_URL, {
-  })
+  .connect(process.env.MONGO_URL, {})
   .then(async () => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    {/* ADD DATA ONE TIME ONLY OR AS NEEDED*/}
+    // drop databse in development mode
+    // await mongoose.connection.db.dropDatabase();
+    // KPI.insertMany(kpis);
   })
   .catch((error) => console.log(`${error} did not connect`));

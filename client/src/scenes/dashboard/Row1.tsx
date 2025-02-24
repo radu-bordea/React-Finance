@@ -6,6 +6,11 @@ type Props = {};
 const Row1 = (props: Props) => {
   const { data } = useGetKpisQuery();
 
+  // Ctrl + Alt + L 
+  console.log("🚀 ~ Row1 ~ data:", data)
+
+  
+
   return (
     <>
       <DashboardBox gridArea="a"></DashboardBox>
