@@ -3,6 +3,7 @@
 - npm i -D @types/react-dom
 - npm i -D eslint eslint-config-react-app
 - npm i -D @types/node
+- npm i recharts
 
 
 # backend

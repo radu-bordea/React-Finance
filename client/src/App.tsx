@@ -18,10 +18,6 @@ export default function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route
-                path="/predictions"
-                element={<div>predictions page</div>}
-              />
             </Routes>
           </Box>
         </ThemeProvider>
