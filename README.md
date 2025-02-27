@@ -4,6 +4,7 @@
 - npm i -D eslint eslint-config-react-app
 - npm i -D @types/node
 - npm i recharts
+- npm install --save regression
 
 
 # backend

@@ -18,7 +18,8 @@
     "preact": "^10.25.4",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
-    "recharts": "^2.15.1"
+    "recharts": "^2.15.1",
+    "regression": "^2.0.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
