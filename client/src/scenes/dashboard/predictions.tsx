@@ -78,7 +78,7 @@ const Predictions = (props: Props) => {
               <Label value="Month" offset={-5} position="insideBottom" />
               {/* Clickable label for toggling predictions */}
               <Label
-                value="Click for --- Predictions"
+                value="Click-Predictions"
                 offset={-7}
                 dx={150}
                 position="insideBottom"
