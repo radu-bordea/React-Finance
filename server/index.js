@@ -8,6 +8,7 @@ import morgan from "morgan"; // HTTP request logger middleware
 import kpiRoutes from "./routes/kpi.js";
 import KPI from "./models/KPI.js";
 import { kpis } from "./data/data.js";
+import path from "path";
 
 /* CONFIGURATIONS */
 dotenv.config(); // Load environment variables from .env file
@@ -27,10 +28,21 @@ app.use(morgan("common"));
 app.use(cors());
 // Enables CORS to allow requests from different origins (useful for frontend-backend communication)
 
+const __dirname = path.resolve();
+
 {
   /* ROUTES */
 }
 app.use("/kpi", kpiRoutes);
+
+// Serve static files in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "dist", "index.html"));
+  });
+}
 
 /* MONGOOSE SETUP*/
 
@@ -40,7 +52,9 @@ mongoose
   .then(async () => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    {/* ADD DATA ONE TIME ONLY OR AS NEEDED*/}
+    {
+      /* ADD DATA ONE TIME ONLY OR AS NEEDED*/
+    }
     // drop databse in development mode
     // await mongoose.connection.db.dropDatabase();
     // KPI.insertMany(kpis);

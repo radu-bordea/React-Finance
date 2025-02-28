@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/theme.ts","./src/vite-env.d.ts","./src/components/DashboardBox.tsx","./src/components/FlexBetween.tsx","./src/scenes/dashboard/charts.tsx","./src/scenes/dashboard/index.tsx","./src/scenes/dashboard/predictions.tsx","./src/scenes/navbar/index.tsx","./src/state/api.ts","./src/state/types.ts"],"errors":true,"version":"5.7.3"}
