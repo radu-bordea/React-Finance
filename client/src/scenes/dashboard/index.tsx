@@ -52,7 +52,7 @@ const Dashboard = () => {
             }
           : {
               gridAutoColumns: "1fr",
-              gridAutoRows: "80px",
+              gridAutoRows: "60px",
               gridTemplateAreas: gridTemplateSmallScreens,
             }
       }
